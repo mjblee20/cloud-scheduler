@@ -1,9 +1,9 @@
 <template>
   <div class="form-container">
-    <form action>
+    <form>
       <div class="usr-grp">
         <label for="username" class="sr-only">Username</label>
-        <div class="icon" id="usr-icon"></div>
+        <div class="icon" id="usr-icon">Icon</div>
         <input
           @focus="changeUserIconBorder()"
           @blur="changeIconBorder()"
@@ -11,11 +11,12 @@
           name="username"
           placeholder="username"
           ref="usr"
+          id="usr"
         />
       </div>
       <div class="pwd-grp">
         <label for="password" class="sr-only">Password</label>
-        <div class="icon" id="pwd-icon"></div>
+        <div class="icon" id="pwd-icon">Icon</div>
         <input
           @focus="changePwdIconBorder()"
           @blur="changeIconBorder()"
@@ -23,6 +24,7 @@
           name="password"
           placeholder="password"
           ref="pwd"
+          id="pwd"
         />
       </div>
       <div class="login-options">
@@ -35,12 +37,14 @@
       </div>
       <div class="btn-group">
         <div class="top">
-          <button class="signup-btn">
+          <button class="signup-btn" type="button">
             <a href="#">Sign Up</a>
           </button>
-          <button class="login-btn" type="submit">Login</button>
+          <button class="login-btn" type="submit" v-on:click="login()">Login</button>
         </div>
-        <button class="fb-login">Login via Facebook</button>
+        <button class="fb-login" v-on:click="fbLogin()">
+          <div class="fb-icon">F</div>Login via Facebook
+        </button>
         <!-- <div id="fb-root">
           <div
             class="fb-login-button"
@@ -60,6 +64,12 @@
 <script>
 export default {
   name: 'LoginForm',
+  data() {
+    return {
+      username: '',
+      password: '',
+    };
+  },
   methods: {
     changeUserIconBorder() {
       let userIcon = document.getElementById('usr-icon');
@@ -79,13 +89,19 @@ export default {
       pwdIcon.style.borderColor = '#6d6d6d';
       pwdIcon.style.opacity = '0.5';
     },
+    login() {
+      console.log('log in normally');
+    },
+    fbLogin() {
+      console.log('log in via fb');
+    },
   },
 };
 </script>
 
 <style scoped>
 .form-container > form {
-  height: 300px;
+  height: 320px;
   width: 350px;
   display: flex;
   flex-direction: column;
@@ -109,6 +125,8 @@ export default {
   border-top: solid 1px #6d6d6d;
   border-bottom: solid 1px #6d6d6d;
   opacity: 0.5;
+  display: grid;
+  place-items: center;
 }
 
 input[type='text'] {
@@ -129,11 +147,15 @@ input[type='text']:focus {
   color: #6d6d6d;
 }
 
+#pwd {
+  -webkit-text-security: disc;
+}
+
 .login-options {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px 0;
+  margin: 5px 0 10px 0;
 }
 
 .login-options > div {
@@ -187,6 +209,12 @@ input[type='checkbox'] {
   margin: 5px 0 10px 5px;
 }
 
+.fb-icon {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  margin-left: 20px;
+}
 .fb-login {
   margin: 5px 0;
   width: 270px;

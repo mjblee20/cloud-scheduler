@@ -8,7 +8,7 @@
       <div class="login">
         <LoginForm />
         <ForgotPasswordModal />
-        <div class="dropdown">dropdown</div>
+        <LanguageDropdown />
       </div>
     </div>
   </div>
@@ -17,12 +17,14 @@
 <script>
 import LoginForm from '../components/Login/LoginForm';
 import ForgotPasswordModal from '../components/Login/ForgotPasswordModal';
+import LanguageDropdown from '../components/Login/LanguageDropdown';
 
 export default {
   name: 'Login',
   components: {
     LoginForm,
     ForgotPasswordModal,
+    LanguageDropdown,
   },
 };
 </script>
