@@ -27,6 +27,8 @@ form select {
   padding: 5px;
   opacity: 0.7;
 }
+
 form select option {
+  background: white;
 }
 </style>

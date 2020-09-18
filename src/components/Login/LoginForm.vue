@@ -38,7 +38,7 @@
       <div class="btn-group">
         <div class="top">
           <button class="signup-btn" type="button">
-            <a href="#">Sign Up</a>
+            <a href="/signup">Sign Up</a>
           </button>
           <button class="login-btn" type="submit" v-on:click="login()">Login</button>
         </div>
