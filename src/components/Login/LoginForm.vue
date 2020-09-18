@@ -78,6 +78,7 @@ export default {
       let pwdIcon = document.getElementById('pwd-icon');
       pwdIcon.style.borderColor = '#6d6d6d';
       pwdIcon.style.opacity = '0.5';
+      console.log('change');
     },
   },
 };
