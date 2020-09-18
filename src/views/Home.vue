@@ -44,34 +44,30 @@ export default {
 <style scoped>
 .home-container {
   display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-columns: 1fr 5fr 1fr;
   grid-template-rows: 70px 600px 500px 60px;
 }
-
 .main {
   grid-row: 2;
-  grid-column: 2;
+  grid-column: 1 / span 3;
   height: 600px;
+  width: 100vw;
   background: grey;
   color: white;
 }
-
 .promotion {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 15% 50% 15% 10%;
+  padding: 10% 50% 10% 15%;
 }
-
 .promo-header {
   font-size: 3em;
 }
-
 .promo-content {
   margin: 20px 0 30px 0;
   font-size: 18px;
 }
-
 .start-btn {
   background: #00a59a;
   width: 180px;
@@ -80,17 +76,14 @@ export default {
   border-radius: 20px;
   color: white;
 }
-
 .info {
   grid-row: 3;
   grid-column: 2;
   display: grid;
   grid-template-columns: 370px 1fr;
   height: 410px;
-  background: lightgrey;
   margin: 40px 0;
 }
-
 .info img {
   float: left;
   height: 410px;
@@ -98,18 +91,15 @@ export default {
   background: grey;
   opacity: 0.5;
 }
-
 .description {
   position: relative;
   padding: 12% 20%;
   font-size: 18px;
 }
-
 .description-title {
   font-size: 1em;
   margin-bottom: 40px;
 }
-
 .footer {
   grid-row: 4;
   grid-column: 1 / span 3;

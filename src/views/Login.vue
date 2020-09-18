@@ -35,21 +35,17 @@ export default {
   place-items: center;
   min-height: 100vh;
 }
-
 .login-header {
   text-align: center;
   margin-bottom: 25px;
 }
-
 .main-head {
   color: #00a59a;
 }
-
 .sub-head {
   font-size: 1em;
   color: #6d6d6d;
 }
-
 .login {
   margin-bottom: 80px;
 }

@@ -38,11 +38,9 @@ export default {
 .brand {
   color: #00a59a;
 }
-
 .title {
   margin: 30px;
 }
-
 button {
   margin-top: 45px;
   width: 200px;
@@ -51,7 +49,6 @@ button {
   background-color: #00a59a;
   border: none;
 }
-
 button a {
   text-decoration: none;
   color: white;
