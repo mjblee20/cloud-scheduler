@@ -35,8 +35,10 @@
       </div>
       <div class="btn-group">
         <div class="top">
-          <button class="create-btn">Create Account</button>
-          <button class="login-btn">Login</button>
+          <button class="signup-btn">
+            <a href="#">Sign Up</a>
+          </button>
+          <button class="login-btn" type="submit">Login</button>
         </div>
         <button class="fb-login">Login via Facebook</button>
         <!-- <div id="fb-root">
@@ -60,14 +62,22 @@ export default {
   name: 'LoginForm',
   methods: {
     changeUserIconBorder() {
-      document.getElementById('usr-icon').style.borderColor = '#00a59a';
+      let userIcon = document.getElementById('usr-icon');
+      userIcon.style.borderColor = '#00a59a';
+      userIcon.style.opacity = '1';
     },
     changePwdIconBorder() {
-      document.getElementById('pwd-icon').style.borderColor = '#00a59a';
+      let pwdIcon = document.getElementById('pwd-icon');
+      pwdIcon.style.borderColor = '#00a59a';
+      pwdIcon.style.opacity = '1';
     },
     changeIconBorder() {
-      document.getElementById('usr-icon').style.borderColor = '#6d6d6d';
-      document.getElementById('pwd-icon').style.borderColor = '#6d6d6d';
+      let userIcon = document.getElementById('usr-icon');
+      userIcon.style.borderColor = '#6d6d6d';
+      userIcon.style.opacity = '0.5';
+      let pwdIcon = document.getElementById('pwd-icon');
+      pwdIcon.style.borderColor = '#6d6d6d';
+      pwdIcon.style.opacity = '0.5';
     },
   },
 };
@@ -90,37 +100,40 @@ export default {
   display: flex;
   align-items: center;
 }
-/* 
-.usr-grp:focus-within,
-.pwd-grp:focus-within {
-} */
 
 .icon {
   height: 40px;
-  width: 40px;
+  width: 45px;
   border-radius: 3px 0 0 3px;
-  border: solid 1px #6d6d6d;
+  border-left: solid 1px #6d6d6d;
+  border-top: solid 1px #6d6d6d;
+  border-bottom: solid 1px #6d6d6d;
+  opacity: 0.5;
 }
 
 input[type='text'] {
   height: 2.5em;
-  width: 231px;
+  width: 90%;
   margin: 10px 0 10px -1px;
   padding: 0px 10px;
   font-size: 1em;
   border-radius: 0 3px 3px 0;
   border: solid 1px #6d6d6d;
+  opacity: 0.5;
 }
 
 input[type='text']:focus {
   outline: none;
   border: solid 1px #00a59a;
+  opacity: 1;
+  color: #6d6d6d;
 }
 
 .login-options {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 10px 0;
 }
 
 .login-options > div {
@@ -147,15 +160,20 @@ input[type='checkbox'] {
   border: none;
   color: #00a59a;
   font-size: 14px;
+  margin-right: 10px;
 }
 
-.create-btn {
+.signup-btn {
   width: 130px;
   height: 40px;
   border-radius: 4px;
   border: solid 1px #00a59a;
   background: white;
-  margin: 5px 5px 5px 0;
+  margin: 5px 5px 10px 0;
+}
+
+.signup-btn a {
+  text-decoration: none;
   color: #00a59a;
 }
 
@@ -166,7 +184,7 @@ input[type='checkbox'] {
   border-radius: 4px;
   border: solid 1px #00a59a;
   background-color: #00a59a;
-  margin: 5px 0 5px 5px;
+  margin: 5px 0 10px 5px;
 }
 
 .fb-login {

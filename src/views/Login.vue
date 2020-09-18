@@ -8,14 +8,15 @@
       <div class="login">
         <LoginForm />
         <ForgotPasswordModal />
+        <div class="dropdown">dropdown</div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import LoginForm from '../components/LoginForm';
-import ForgotPasswordModal from '../components/ForgotPasswordModal';
+import LoginForm from '../components/Login/LoginForm';
+import ForgotPasswordModal from '../components/Login/ForgotPasswordModal';
 
 export default {
   name: 'Login',
@@ -47,6 +48,7 @@ export default {
   color: #6d6d6d;
 }
 
-.login-form {
+.login {
+  margin-bottom: 80px;
 }
 </style>
